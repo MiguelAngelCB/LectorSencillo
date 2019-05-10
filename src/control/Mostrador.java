@@ -6,6 +6,7 @@ import javax.swing.JTextArea;
 
 public class Mostrador {
 	Libro libro;
+	private int contadorNumeroPagina = 0;
 
 	public Mostrador() {
 		super();
@@ -25,6 +26,18 @@ public class Mostrador {
 				salir = true;
 			}
 		} while (textArea.getPreferredSize().getHeight() + height2 <= textArea.getHeight() && !salir);
+	}
+
+	public void sumarPagina() {
+		contadorNumeroPagina++;
+	}
+
+	public int getContadorNumeroPagina() {
+		return contadorNumeroPagina;
+	}
+
+	public void setContadorNumeroPagina(int contadorNumeroPagina) {
+		this.contadorNumeroPagina = contadorNumeroPagina;
 	}
 
 }

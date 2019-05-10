@@ -2,6 +2,10 @@ package vista;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -12,11 +16,6 @@ import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 
 import control.Mostrador;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
 
 public class LectorUIEjemplo extends JFrame {
 
@@ -50,10 +49,11 @@ public class LectorUIEjemplo extends JFrame {
 
 	/**
 	 * Create the frame.
-	 * @throws InterruptedException 
+	 * 
+	 * @throws InterruptedException
 	 */
 	public LectorUIEjemplo() {
-		mostrador=new Mostrador();
+		mostrador = new Mostrador();
 		setTitle("Lector");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 321, 490);
@@ -84,7 +84,8 @@ public class LectorUIEjemplo extends JFrame {
 		btnAlante.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				mostrador.mostrarPagina(textArea);
-				
+				mostrador.sumarPagina();
+				lblNumeroPagina.setText(String.valueOf(mostrador.getContadorNumeroPagina()));
 			}
 		});
 
